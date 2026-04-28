@@ -1,5 +1,4 @@
 # Waveshare RGB-Matrix-Px-xx Product Engineering Sample Program
-# Waveshare RGB-Matrix-Px-xx Product Engineering Sample Program
 
 [中文](README_ZH.md)
 
