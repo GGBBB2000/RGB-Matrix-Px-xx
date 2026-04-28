@@ -1,4 +1,4 @@
-# Waveshare ESP32-S3-Touch-LCD-4.3C 产品工程示例程序
+# Waveshare RGB-Matrix-Px-xx 产品工程示例程序
 
 [English](README.md)
 
@@ -31,6 +31,7 @@
 
 如果您遇到任何问题：
 
+- 请先查看 [Issues](https://gitee.com/waveshare/RGB-Matrix-Px-xx/issues) 版块。
 - 请先查看 [Issues](https://gitee.com/waveshare/RGB-Matrix-Px-xx/issues) 版块。
 - 创建一个新的 Issue 并提供详细信息。
 - 参考文档获取故障排除提示。
