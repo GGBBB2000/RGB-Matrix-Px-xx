@@ -116,8 +116,12 @@ static inline void ClockSetupDelay(int slowdown) {
 }
 
 static inline void IoStoreBarrier() {
-#if defined(__arm__) || defined(__aarch64__)
+#if defined(__aarch64__) || (defined(__arm__) && defined(__ARM_ARCH) && __ARM_ARCH >= 7)
   asm volatile("dmb ishst" ::: "memory");
+#else
+  // ARMv6 (e.g. Pi Zero / Pi 1) has no 'dmb ishst'. This RP1 RIO backend is
+  // Pi 5-only and never runs on such boards, so a compiler barrier suffices.
+  asm volatile("" ::: "memory");
 #endif
 }
 
