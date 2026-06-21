@@ -1,0 +1,4 @@
+module CRGBMatrix {
+    header "CRGBMatrix.h"
+    export *
+}
