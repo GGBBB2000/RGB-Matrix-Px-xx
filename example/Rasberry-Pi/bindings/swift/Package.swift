@@ -26,6 +26,7 @@ let package = Package(
         .library(name: "RGBLedMatrix", targets: ["RGBLedMatrix"]),
         .executable(name: "SmokeTest", targets: ["SmokeTest"]),
         .executable(name: "MinimalExample", targets: ["MinimalExample"]),
+        .executable(name: "ScrollingText", targets: ["ScrollingText"]),
     ],
     targets: [
         // Thin C-import target: exposes the existing led-matrix-c.h to Swift.
@@ -47,6 +48,13 @@ let package = Package(
         // Real example: drives the panel. Needs a 64-bit Pi + GPIO + sudo.
         .executableTarget(
             name: "MinimalExample",
+            dependencies: ["RGBLedMatrix"],
+            linkerSettings: linkRGBMatrix
+        ),
+
+        // Scrolling text demo (Font + double buffering). 64-bit Pi + sudo.
+        .executableTarget(
+            name: "ScrollingText",
             dependencies: ["RGBLedMatrix"],
             linkerSettings: linkRGBMatrix
         ),
